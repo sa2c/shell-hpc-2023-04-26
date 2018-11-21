@@ -1,7 +1,7 @@
-# workshop-template
+# short-workshop-template
 
-This repository is [Software Carpentry][swc-site] and [Data Carpentry][dc-site]'s
-template for creating websites for workshops.
+This repository is [SA2C][dc-site]'s
+template for creating websites for short workshops.
 
 1.  Please *do not fork this repository directly on GitHub.*
     Instead, please use GitHub's importer following [the instructions below](#creating-a-repository)
@@ -10,19 +10,6 @@ template for creating websites for workshops.
 2.  Please *do your work in your repository's `gh-pages` branch*,
     since that is what is
     [automatically published as a website by GitHub][github-project-pages].
-
-3.  Once you are done, please also [let us know][email] the workshop URL. If this is a self-organised workshop, you should also [fill in the self-organized workshop form][self-organized-workshop-form] (if you have not already done so), so we can keep track of all workshops. We build the list of workshops on our websites from the data included in your `index.md` page. We can only do that if you [customize][customization] that page correctly *and* let us know the workshop URL.
-
-If you run into problems,
-or have ideas about how to make this process simpler,
-please [get in touch](#getting-and-giving-help).
-The pages on [customizing your website][customization],
-the [FAQ][faq],
-and the [design notes][design] have more detail on what we do and why.
-And please note:
-if you are teaching Git,
-please [create a separate repository](#setting-up-a-separate-repository-for-learners)
-for your learners to practice in.
 
 ## Creating a Repository
 
@@ -33,7 +20,7 @@ for your learners to practice in.
 2.  Go to <a href="https://github.com/new/import" target="_blank">GitHub's importer</a>.
 
 3.  Paste the url of this repo as the old repository to clone:
-    <https://github.com/carpentries/workshop-template>.
+    <https://github.com/sa2c/short-workshop-template>.
 
 4.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
@@ -250,7 +237,7 @@ or [mail us][email].
 
 [email]: mailto:team@carpentries.org
 [customization]: https://carpentries.github.io/workshop-template/customization/
-[dc-site]: http://datacarpentry.org
+[sa2c-site]: https://sa2c.swansea.ac.uk/
 [design]: https://carpentries.github.io/workshop-template/design/
 [faq]: https://carpentries.github.io/workshop-template/faq/
 [github-project-pages]: https://help.github.com/articles/creating-project-pages-manually/
@@ -264,4 +251,3 @@ or [mail us][email].
 [ruby-installer]: http://rubyinstaller.org/
 [rubygems]: https://rubygems.org/pages/download/
 [self-organized-workshop-form]: https://amy.software-carpentry.org/workshops/submit/
-[swc-site]: http://software-carpentry.org

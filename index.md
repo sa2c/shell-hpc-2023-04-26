@@ -10,6 +10,7 @@ humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18,
 humantime: "FIXME"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
 startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+scw_project: "FIXME"  # project code for the SCW training project for this event
 instructor: ["FIXME"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["FIXME"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["fixme@example.org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
@@ -65,6 +66,8 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include dc/intro.html %}
 {% elsif page.carpentry == "lc" %}
   {% include lc/intro.html %}
+{% elsif page.carpentry == "sa2c" %}
+  {% include sa2c/intro.html %}
 {% endif %}
 
 {% comment %}
@@ -79,6 +82,8 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include dc/who.html %}
 {% elsif page.carpentry == "lc" %}
   {% include lc/who.html %}
+{% elsif page.carpentry == "sa2c" %}
+  {% include sa2c/who.html %}
 {% endif %}
 
 {% comment %}
@@ -123,7 +128,7 @@ and our administrator may contact you if we need any extra information.</h4>
   Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges
   on. They should have a few specific software packages installed (listed
   <a href="#setup">below</a>). They are also required to abide by
-  {% if page.carpentry == "swc" %}
+  {% if page.carpentry == "swc" or page.carpentry == "sa2c" %}
   Software Carpentry's
   {% elsif page.carpentry == "dc" %}
   Data Carpentry's
@@ -146,7 +151,7 @@ and our administrator may contact you if we need any extra information.</h4>
 </p>
 <ul>
   <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible restrooms are available.</li>
+  <li>Accessible toilets are available.</li>
 </ul>
 <p>
   Materials will be provided in advance of the workshop and
@@ -187,7 +192,9 @@ and our administrator may contact you if we need any extra information.</h4>
 {% comment %} 
  SURVEYS - DO NOT EDIT SURVEY LINKS 
 {% endcomment %}
-<h2 id="surveys">Surveys</h2>
+{% if site.carpenty == "swc" or site.carpentry == "dc" or site.carpentry == "lc" %}
+ <h2 id="surveys">Surveys</h2>
+{% endif %}
 <p>Please be sure to complete these surveys before and after the workshop.</p>
 {% if site.carpentry == "swc" %} 
 <p><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
@@ -230,11 +237,11 @@ and our administrator may contact you if we need any extra information.</h4>
   where 'YYYY-MM-DD-site' is the identifier for your workshop,
   e.g., '2015-06-10-esu'.
 {% endcomment %}
-{% if page.collaborative_notes %}
 <p id="collaborative_notes">
-  We will use this <a href="{{page.collaborative_notes}}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
+  We will use <a href="https://recon.swansea.ac.uk">ReCoN</a>, the
+  Swansea University Research Computing Network, for chatting, taking notes, and sharing URLs and bits of code.
 </p>
-{% endif %}
+
 
 <hr/>
 
@@ -394,7 +401,8 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <div id="git"> {% comment %} Start of 'Git' section. GitHub browser compatability
            is given at https://help.github.com/articles/supported-browsers/{% endcomment %}
-  <h3>Git</h3>
+{% comment %}
+<h3>Git</h3>
   <p>
     Git is a version control system that lets you track who made changes
     to what when and has options for easily updating a shared or public
@@ -449,10 +457,12 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
   </div>
-</div> {% comment %} End of 'Git' section. {% endcomment %}
+</div>
+{% endcomment %} {% comment %} End of 'Git' section. {% endcomment %}
 
 <div id="editor"> {% comment %} Start of 'editor' section. {% endcomment %}
-  <h3>Text Editor</h3>
+{% comment %}
+<h3>Text Editor</h3>
 
   <p>
     When you're writing code, it's nice to have a text editor that is
@@ -509,13 +519,16 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
   </div>
-</div> {% comment %} End of 'editor' section. {% endcomment %}
+</div> 
+{% endcomment %}{% comment %} End of 'editor' section. {% endcomment %}
 
 <div id="python"> {% comment %} Start of 'Python' section. Remove the third paragraph if
            the workshop will teach Python using something other than
            the Jupyter notebook.
            Details at https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility {% endcomment %}
-  <h3>Python</h3>
+
+{% comment %}
+<h3>Python</h3>
 
   <p>
     <a href="https://python.org">Python</a> is a popular language for
@@ -602,9 +615,12 @@ and our administrator may contact you if we need any extra information.</h4>
   which has instructions on how to test that everything was installed correctly.
   </p>
 {% endcomment %}
-</div> {% comment %} End of 'Python' section. {% endcomment %}
+</div> 
+{% endcomment %}
+{% comment %} End of 'Python' section. {% endcomment %}
 
 <div id="r"> {% comment %} Start of 'R' section. {% endcomment %}
+{% comment %}
   <h3>R</h3>
 
   <p>
@@ -653,10 +669,13 @@ and our administrator may contact you if we need any extra information.</h4>
       </p>
     </div>
   </div>
-</div> {% comment %} End of 'R' section. {% endcomment %}
+</div> 
+{% endcomment %}
+{% comment %} End of 'R' section. {% endcomment %}
 
 <div id="sql"> {% comment %} Start of 'SQLite' section. {% endcomment %}
-  <h3>SQLite</h3>
+{% comment %}
+<h3>SQLite</h3>
 
   <p>
     SQL is a specialized programming language used with databases.  We
@@ -699,10 +718,13 @@ and our administrator may contact you if we need any extra information.</h4>
   <p><strong>If you installed Anaconda, it also has a copy of SQLite
     <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
     Instructors will provide a workaround for it if needed.</strong></p>
-</div> {% comment %} End of 'SQLite' section. {% endcomment %}
+</div> 
+{% endcomment %}
+{% comment %} End of 'SQLite' section. {% endcomment %}
 
 <div id="openrefine"> {% comment %} Start of 'OpenRefine' section. {% endcomment %}
-  <h3>OpenRefine</h3>
+{% comment %}
+<h3>OpenRefine</h3>
   <p>
     For this lesson you will need <em>OpenRefine</em> and a
     web browser. <em>Note:</em> this is a Java program that runs on your machine (not in the cloud).
@@ -746,7 +768,37 @@ and our administrator may contact you if we need any extra information.</h4>
       <p>If you are using a different browser, or if OpenRefine does not automatically open for you, point your browser at <a href="http://127.0.0.1:3333/">http://127.0.0.1:3333/</a> or <a href="http://localhost:3333">http://localhost:3333</a> to use the program.</p>
     </div>
   </div>
-</div> {% comment %} End of 'OpenRefine' section. {% endcomment %}
+</div> 
+{% endcomment %}
+{% comment %} End of 'OpenRefine' section. {% endcomment %}
+
+{% comment %} {% endcomment %}
+<div id="scw">
+  <h3>Supercomputing Wales</h3>
+  
+  In this workshop we will use the Supercomputing Wales facilities to
+  learn to use High-Performance Computing. For this, you will need an
+  account on the Supercomputing Wales facilities.
+  
+  <ol>
+    <li>Visit <a href="https://my.supercomputing.wales/">My
+    Supercomputing Wales</a></li>
+	<li>Sign in with your Swansea University email and password</li>
+	<li>Fill in the form requesting a Supercomputing Wales
+    account. Your aaccount request will be processed by an
+    administrator.</li>
+	<li>Once you receive an email indicating that your account has been
+    created, then revisit <a
+    href="https://my.supercomputing.wales/">My Supercomputing
+    Wales</a>, and log in again if necessary.</li>
+	<li>Click the "Reset SCW Password" button, and enter a password
+    that you will use to access the Supercomputing Wales
+    hardware. (This does not have to be the same as your Swansea
+    University password.) Click Submit.</li>
+	<li>Under "Join a project", enter {{sitte.scw_project}} as the
+    project code for this training session, and click "Join".</li>
+  </ol>
+</div> {% comment %} End of 'Supercomputing Wales' section. {% endcomment %}
 
 {% comment %}
 <div id="vm">

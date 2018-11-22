@@ -795,7 +795,7 @@ recon_channel:        # optional: url for specific recon channel to join
     that you will use to access the Supercomputing Wales
     hardware. (This does not have to be the same as your Swansea
     University password.) Click Submit.</li>
-	<li>Under "Join a project", enter {{site.scw_project}} as the
+	<li>Under "Join a project", enter {{page.scw_project}} as the
     project code for this training session, and click "Join".</li>
   </ol>
 </div> {% comment %} End of 'Supercomputing Wales' section. {% endcomment %}

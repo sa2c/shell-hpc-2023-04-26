@@ -223,6 +223,8 @@ recon_channel:        # optional: url for specific recon channel to join
   {% include dc/schedule.html %}
 {% elsif page.carpentry == "lc" %}
   {% include lc/schedule.html %}
+{% elsif page.carpentry == "sa2c" %}
+  {% include sa2c/schedule.html %}
 {% endif %}
 
 {% comment %}

@@ -802,6 +802,39 @@ recon_channel:        # optional: url for specific recon channel to join
   </ol>
 </div> {% comment %} End of 'Supercomputing Wales' section. {% endcomment %}
 
+{% comment %} {% endcomment %}
+<div id="filezilla">
+  <h3>FileZilla</h3>
+
+  We will use FileZilla to transfer files to and from the Supercomputing Wales facilities.
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4 id="filezilla-windows">Windows</h4>
+      <ol>
+        <li>Open <a href="https://filezilla-project.org/download.php?platform=win64">https://filezilla-project.org/download.php?platform=win64</a> with your web browser.</li>
+	<li>Download and run the installer. You only need FileZilla, not FileZilla Pro.</li>
+	<li>Follow the on-screen instructions. Note that while the installer may try to convince you to install additional software, you do not need to agree to this; if you do not agree to the additional license agreement, FileZilla will still install.</li>
+      </ol>
+    </div>
+    <div class="col-md-4">
+      <h4 id="filezilla-mac">macOS</h4>
+      <ol>
+        <li>Open <a href="https://filezilla-project.org/download.php?platform=osx">https://filezilla-project.org/download.php?platform=osx</a> with your web browser.</li>
+	<li>Download and open the Client bundle. You only need FileZilla, not FileZilla Pro.</li>
+	<li>Copy the FileZilla app to your Applications folder.</li>
+      </ol>
+    </div>
+    <div class="col-md-4">
+      <h4 id="filezilla-linux">Linux</h4>
+      <ol>
+        <li>Search for and install FileZilla in your distribution's package manager.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+{% comment %} End of 'FileZilla' section {% endcomment %}
+
 {% comment %}
 <div id="vm">
   <h3>Virtual Machine</h3>

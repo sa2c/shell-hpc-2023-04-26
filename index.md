@@ -1,6 +1,6 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-carpentry: "FIXME"    # what kind of Carpentry (must be either "lc" or "dc" or "swc")
+carpentry: "FIXME"    # what kind of Carpentry (must be either "lc", "dc", "swc", "sa2c" or "sa2c_mpi")
 venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric State University")
 address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
 country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
@@ -66,6 +66,8 @@ recon_channel:        # optional: url for specific recon channel to join
   {% include lc/intro.html %}
 {% elsif page.carpentry == "sa2c" %}
   {% include sa2c/intro.html %}
+{% elsif page.carpentry == "sa2c_mpi" %}
+  {% include sa2c_mpi/intro.html %}
 {% endif %}
 
 {% comment %}
@@ -82,6 +84,8 @@ recon_channel:        # optional: url for specific recon channel to join
   {% include lc/who.html %}
 {% elsif page.carpentry == "sa2c" %}
   {% include sa2c/who.html %}
+{% elsif page.carpentry == "sa2c_mpi" %}
+  {% include sa2c_mpi/who.html %}
 {% endif %}
 
 {% comment %}
@@ -126,7 +130,7 @@ recon_channel:        # optional: url for specific recon channel to join
   Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges
   on. They should have a few specific software packages installed (listed
   <a href="#setup">below</a>). They are also required to abide by
-  {% if page.carpentry == "swc" or page.carpentry == "sa2c" %}
+  {% if page.carpentry == "swc" or page.carpentry == "sa2c" or page.carpentry == "sa2c_mpi" %}
   Software Carpentry's
   {% elsif page.carpentry == "dc" %}
   Data Carpentry's
@@ -225,6 +229,8 @@ recon_channel:        # optional: url for specific recon channel to join
   {% include lc/schedule.html %}
 {% elsif page.carpentry == "sa2c" %}
   {% include sa2c/schedule.html %}
+{% elsif page.carpentry == "sa2c_mpi" %}
+  {% include sa2c_mpi/schedule.html %}
 {% endif %}
 
 {% comment %}
@@ -262,6 +268,7 @@ recon_channel:        # optional: url for specific recon channel to join
   please preview your site before committing, and make sure to run
   'tools/check' as well.
 {% endcomment %}
+{% if page.carpentry != "sa2c_mpi" %}
 <h2 id="syllabus">Syllabus</h2>
 
 {% if page.carpentry == "swc" %}
@@ -275,6 +282,7 @@ recon_channel:        # optional: url for specific recon channel to join
 {% endif %}
 
 <hr/>
+{% endif %}
 
 {% comment %}
   SETUP
@@ -309,6 +317,7 @@ recon_channel:        # optional: url for specific recon channel to join
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
 
+{% if page.carpentry == "sa2c" %}
 <div id="shell"> {% comment %} Start of 'shell' section. {% endcomment %}
   <h3>The Bash Shell</h3>
 
@@ -400,6 +409,85 @@ recon_channel:        # optional: url for specific recon channel to join
     </div>
   </div>
 </div> {% comment %} End of 'shell' section. {% endcomment %}
+
+{% elsif page.carpentry == "sa2c_mpi" %}
+  
+<div id="mpi"> {% comment %} Start of 'mpi' section. {% endcomment %}
+  <h3> The Bash Shell </h3>
+  <p>
+    Bash is a commonly-used shell that gives you the power to do simple
+    tasks more quickly. In the MPI workshop, we will use it to interact
+    with the Sunbird cluster. 
+  </p>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4 id="shell-windows">Windows</h4>
+      <ol>
+        <li>Download the Cygwin <a href="https://www.cygwin.com/install.html">installer</a>.</li>
+        <li>Run the installer and follow the steps below:
+          <ol>
+            {% comment %} Git 2.18.0 Setup {% endcomment %}
+            <li>
+                Click on "Next" six times. You don't need to change anything
+                in the Information and location screens.
+            </li>
+            <li>
+                In the select packages screen, select the latest version of the following packages
+                <ol>
+                  <li> ssh </li>
+                  <li> gcc-core and gcc-fortran </li>
+                  <li> openmpi, libopenmpi40, libopenmpihf08_40, libopenmpiusef08_40 and openmpi-devel </li>
+                  <li> make and cmake </li>
+                  <li> git </li>
+                </ol>
+            </li>
+            <li>Click "Next" twice.</li>
+            <li>Click "Finish".</li>
+          </ol>
+        </li>
+      </ol>
+      <p>This will provide you with both the Cygwin Shell and OpenMPI.</p>
+    </div>
+    <div class="col-md-4">
+      <h4 id="shell-macosx">macOS</h4>
+      <p>
+        The default shell in all versions of macOS is Bash, so no
+        need to install anything.  You access Bash from the Terminal
+        (found in
+        <code>/Applications/Utilities</code>).
+        See the Git installation <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">video tutorial</a>
+        for an example on how to open the Terminal.
+        You may want to keep
+        Terminal in your dock for this workshop.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h4 id="shell-linux">Linux</h4>
+      <p>
+        The default shell is usually Bash, but if your
+        machine is set up differently you can run it by opening a
+        terminal and typing <code>bash</code>. 
+      </p>
+    </div>
+  </div>
+
+  <h3>MPI Worshop Requirements </h3>
+
+  <p>
+    OpenMPI is an open source implementation of the MPI standard.
+    It is widely available and straightforward to install on most systems.
+    However, when using using Visual Studio on Windows,
+    it is easier to install and use the Microsoft implementation of MPI.
+  </p>
+
+  <p>
+    Follow the instruction on the <a href="https://rantahar.github.io/introduction-to-mpi/setup.html">workshop setup page</a>.
+    Install an implementation of MPI, CMocka or FRUIT, and the CubeGUI from the
+    Scalasca section.
+  </p>
+</div>
+{% endif %}
 
 <div id="git"> {% comment %} Start of 'Git' section. GitHub browser compatability
            is given at https://help.github.com/articles/supported-browsers/{% endcomment %}
@@ -802,6 +890,7 @@ recon_channel:        # optional: url for specific recon channel to join
   </ol>
 </div> {% comment %} End of 'Supercomputing Wales' section. {% endcomment %}
 
+{% if page.carpentry == "sa2c" %}
 {% comment %} {% endcomment %}
 <div id="filezilla">
   <h3>FileZilla</h3>
@@ -834,6 +923,7 @@ recon_channel:        # optional: url for specific recon channel to join
   </div>
 </div>
 {% comment %} End of 'FileZilla' section {% endcomment %}
+{% endif %}
 
 {% comment %}
 <div id="vm">

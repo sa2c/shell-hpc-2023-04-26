@@ -6,10 +6,10 @@ address: "Zoom; link circulated by email"      # full street address of workshop
 country: "gb"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
 language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
 latlng: ""       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use https://www.latlong.net/)
-humandate: "February 10, 2021"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humandate: "February 25-26, 2021"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "09:30 am - 1:00 pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
-startdate: 2021-02-10      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: 2021-02-11        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+startdate: 2021-02-25      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2021-02-26        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 scw_project: "scw1389"  # project code for the SCW training project for this event
 instructor: ["Michele Mesiti", "Ed Bennett"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["Ben Thorpe"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]

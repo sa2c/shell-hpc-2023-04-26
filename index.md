@@ -894,6 +894,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
         <li>Open <a href="https://filezilla-project.org/download.php?platform=win64">https://filezilla-project.org/download.php?platform=win64</a> with your web browser.</li>
 	<li>Download and run the installer. You only need FileZilla, not FileZilla Pro.</li>
 	<li>Follow the on-screen instructions. Note that while the installer may try to convince you to install additional software, you do not need to agree to this; if you do not agree to the additional license agreement, FileZilla will still install.</li>
+        <li>FileZilla has been known to trigger some antivirus and anti-malware applications. You can also use <a href="https://winscp.net/">WinSCP</a>, which functions in the same way.</li>
       </ol>
     </div>
     <div class="col-md-4">

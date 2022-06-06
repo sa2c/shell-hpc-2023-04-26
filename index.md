@@ -6,15 +6,15 @@ address: "Zoom; link circulated by email"      # full street address of workshop
 country: "gb"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
 language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
 latlng: ""       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use https://www.latlong.net/)
-humandate: "Nov 10-11, 2021"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "9:30am - 1:00 pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
-startdate: 2021-11-10      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: 2021-11-11        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+humandate: "Jun 8-9, 2021"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "1:00pm - 4:30 pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
+startdate: 2022-08-08      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2022-08-09        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 scw_project: "scw1389"  # project code for the SCW training project for this event
-instructor: ["Ed Bennett", "Michele Mesiti"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["Tom Pritchard"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+instructor: ["Ed Bennett"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper: ["Tianyi Pan", "Michael Pei", "Julian Lenz"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["e.j.bennett@swansea.ac.uk"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
-collaborative_notes: "https://pad.carpentries.org/2021-05-11-swansea"            # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
+collaborative_notes: "https://pad.carpentries.org/2022-06-08-swansea"            # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
 
@@ -136,7 +136,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   {% endif %}
   <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
 </p>
-<p id="registration"><strong>Registration:</strong> <a href="https://tocyn.cymru/en/event/36d566e6-c06b-4561-8900-d9f1b52250e5">Tocyn Cymru</a></p>
+<p id="registration"><strong>Registration:</strong> <a href="https://tocyn.cymru/en/event/9ae55ee0-bf6f-45bf-ba38-56dd20159abe">Tocyn Cymru</a></p>
 
 {% comment %}
   ACCESSIBILITY
